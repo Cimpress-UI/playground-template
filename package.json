@@ -1,8 +1,8 @@
 {
-  "name": "playground-template",
+  "name": "playground",
   "version": "0.0.0",
   "private": true,
-  "description": "A template project for the Cimpress UI playground.",
+  "description": "Cimpress UI playground",
   "author": "Cimpress",
   "license": "Apache-2.0",
   "type": "module",
