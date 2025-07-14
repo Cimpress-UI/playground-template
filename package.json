@@ -7,10 +7,10 @@
   "license": "Apache-2.0",
   "type": "module",
   "scripts": {
-    "postinstall": "cd playground && pnpm install",
-    "dev": "pnpm run -r dev",
-    "build": "pnpm run -r build",
-    "preview": "pnpm run -r preview",
+    "postinstall": "cd playground && npm install",
+    "dev": "cd playground && npm run dev",
+    "build": "cd playground && npm run build",
+    "preview": "cd playground && npm run preview",
     "lint:check": "eslint .",
     "format:check": "prettier . --ignore-unknown --check",
     "types:check": "tsc -b",
@@ -31,8 +31,5 @@
     "rimraf": "^6.0.1",
     "typescript": "5.8.3",
     "typescript-eslint": "^8.36.0"
-  },
-  "engines": {
-    "pnpm": ">=9.10.0"
   }
 }
