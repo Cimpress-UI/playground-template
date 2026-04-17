@@ -9,14 +9,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@cimpress-ui/react": "1.13.4",
-    "@cimpress-ui/tanstack-table-react": "1.0.0",
+    "@cimpress-ui/react": "1.23.0",
+    "@cimpress-ui/tanstack-table-react": "1.1.0",
     "@fontsource-variable/open-sans": "^5.2.7",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3"
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5"
   },
   "devDependencies": {
-    "@types/react": "^19.2.8",
+    "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.2",
     "typescript": "5.9.3",
