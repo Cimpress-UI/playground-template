@@ -67,7 +67,6 @@ export default tseslint.config([
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
-      'react-hooks/react-compiler': ['error', { eslintSuppressionRules: ['react-hooks/rules-of-hooks'] }],
       'unicorn/prefer-module': 'error',
       'unicorn/prefer-node-protocol': 'error',
       'import-x/order': [

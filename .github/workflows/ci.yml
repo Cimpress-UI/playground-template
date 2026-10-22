@@ -1,0 +1,51 @@
+# Validates every pull request (including Dependabot updates) before a human approves it.
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: Lint, type-check and build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            playground/package-lock.json
+
+      # Install both projects strictly from their lockfiles. The root `postinstall`
+      # script would run a non-strict `npm install` in the playground, so skip it.
+      - name: Install root dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Install playground dependencies
+        run: npm ci
+        working-directory: playground
+
+      - name: Check formatting
+        run: npm run format:check
+
+      - name: Lint
+        run: npm run lint:check
+
+      - name: Type-check
+        run: npm run types:check
+
+      - name: Build
+        run: npm run build
